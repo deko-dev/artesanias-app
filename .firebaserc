@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "artesanias-app": {
+      "hosting": {
+        "artesanias-app": [
+          "artesanias-app"
+        ]
+      }
+    }
+  }
+}

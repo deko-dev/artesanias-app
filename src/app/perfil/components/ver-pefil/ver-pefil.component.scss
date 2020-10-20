@@ -1,0 +1,70 @@
+main {
+    .btn-edit {
+        bottom: 30%;
+        position: absolute;
+        left: 80%;
+    }
+    hr {
+        color: #707411;
+        height: 5px;
+        width: 60%;
+        border-radius: 50%;
+        box-shadow: 2px 2px 5px #000;
+        margin: 0 auto;
+    }
+    .box-portada {
+        position: relative;
+        width: 100%;
+        border: 10px solid #fff;
+        height: 320px;
+        overflow: hidden;
+    }
+    .box-perfil {
+        top: -135px;
+        position: relative;
+        width: 20%;
+        border-radius: 50%;
+        img {
+            border-radius: 50%;
+            border: 10px solid #ececec;
+            width: 100%;
+            background: #ececec;
+        }
+    }
+    .box-data {
+        width: 90%;
+        justify-content: space-between;
+        display: flex;
+        position: relative;
+        background: #fff;
+        top: -108px;
+        margin: 0 auto;
+        border-radius: 10px;
+        box-shadow: 1px 3px 10px grey;
+        .box-datos-personales {
+            text-align: center;
+            flex: 0 1 50%;
+            margin: 20px 0;
+            font-weight: 300;
+            h3 {
+                font-weight: 500;
+            }
+        }
+        .box-direcciones {
+            flex: 0 1 50%;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: 300;
+            .direcciones {
+                text-align: center;
+                h5 small {
+                    color: #9fa327;
+                }
+            }
+        }
+    }
+    .box-productos {
+        text-align: center;
+        margin-top: 40px;
+    }
+}

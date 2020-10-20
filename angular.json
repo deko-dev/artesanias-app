@@ -121,8 +121,13 @@
               "devServerTarget": "artesanias-app:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "artesanias-app"
 }

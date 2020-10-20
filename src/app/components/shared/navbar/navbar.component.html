@@ -1,0 +1,50 @@
+<header class="header" [ngClass]="{'principal': principal}">
+    <!-- Inicio del Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- Inicio container-fluid -->
+        <div class="container-fluid">
+            <!-- Titulo, Nombre o Logo del Proyeto-->
+            <a class="navbar-brand logo" href=".main">Artesanias.com</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0" *ngIf="!logeado">
+
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-success" aria-current="page" (click)="login()">
+                            <i class="fab fa-google"></i> Login
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0" *ngIf="logeado">
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" routerLink="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="productos" disabled>Contactanos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" [routerLink]="['perfil', user.uid.slice(0, 10)]">Ver perfil</a></li>
+                            <li><a class="dropdown-item" href="#">Mis compras</a></li>
+                            <li><a class="dropdown-item" href="listar.html">Mis ventas</a></li>
+                            <li>
+                                <a class="dropdown-item" href="#" (click)="logout()">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Final container-fluid -->
+
+    </nav>
+    <!-- Final del Navbar -->
+</header>

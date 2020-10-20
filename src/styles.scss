@@ -1,1 +1,132 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+/* Globales */
+
+body {
+    height: 100vh;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+p {
+    margin: 0 !important;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* Main */
+
+.main {
+    height: 90vh;
+    background: #f7f7f7;
+    text-align: center;
+    padding: 30px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 768px) {
+        height: auto;
+    }
+    h1,
+    h3 {
+        color: #9fa327;
+        font-weight: 300;
+    }
+    h3 {
+        font-family: 'Dancing Script', cursive;
+    }
+    hr {
+        color: #707411;
+        height: 5px;
+        width: 60%;
+        border-radius: 50%;
+        box-shadow: 2px 2px 5px #000;
+    }
+    .contentido-main {
+        width: 80%;
+        p {
+            font-size: 25px;
+            margin: 0;
+            font-weight: 100;
+        }
+    }
+    .opts-main {
+        margin-top: 20px;
+        flex: 1;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: auto;
+        width: 50%;
+        @media screen and (max-width: 768px) {
+            width: 70%;
+        }
+        @media screen and (max-width:420px) {
+            width: 100%;
+        }
+        .opt {
+            padding: 20px;
+            height: 250px;
+            flex: 0 1 calc(35% - 20px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: .5s;
+            i {
+                color: #9fa327;
+            }
+            @media screen and (max-width: 768px) {
+                flex: 0 1 calc(50% - 20px);
+            }
+        }
+        .opt:hover {
+            transform: translateY(-20px);
+        }
+    }
+    .comprar {
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        background-size: cover;
+        background-image: url(assets/img/comprar2.jpg);
+    }
+    .vender {
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        background-size: cover;
+        background-image: url(assets/img/vender.jpg);
+    }
+}
+
+.main.productos {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    @media screen and (max-width: 768px) {
+        flex-direction: row;
+    }
+    @media screen and (max-width:420px) {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+    .card {
+        flex: 0 1 calc(30% - 10px);
+        transition: 1s;
+        @media screen and (max-width: 768px) {
+            flex: 0 1 calc(50% - 10px);
+        }
+        // @media screen and (max-width:420px) {
+        //     flex-direction: column;
+        //     padding: 10px 20px;
+        // }
+    }
+    .card:hover {
+        transform: translateY(-20px);
+        border-bottom: 5px solid #9fa327;
+        border-top: 5px solid #9fa327;
+    }
+}

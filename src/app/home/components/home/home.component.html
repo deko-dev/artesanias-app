@@ -1,0 +1,28 @@
+<main class="main">
+
+    <h1>Bienvenido a Artesanias.com!!</h1>
+
+    <div class="contentido-main">
+        <p>Somos una tienda virtual donde podras elegir entre muchas artesanias y comprar la que mas te gusta, ¡Ven y Disfruta de Nuestros Servicios!</p>
+    </div>
+
+    <hr>
+
+    <h3>¿Que deseas Hacer?</h3>
+
+    <div class="opts-main">
+
+        <div class="opt comprar animate__animated animate__bounceInUp wow">
+            <a routerLink="productos/all" class="btn btn-block btn-primary">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Comprar
+            </a>
+
+        </div>
+        <div class="opt vender animate__animated animate__bounceInUp wow">
+            <a [routerLink]="['productos/all', 'deyser_orozco']" class="btn btn-block btn-success">
+                <i class="fas fa-store"></i> Vender
+            </a>
+        </div>
+    </div>
+
+</main>

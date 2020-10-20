@@ -1,0 +1,39 @@
+<main>
+    <button class="btn btn-primary btn-edit">
+        <i class="far fa-edit"></i>
+        Editar Perfil
+    </button>
+    <div class="box-portada">
+        <img *ngIf="usuario.portada != ''" [src]="usuario.portada" alt="" class="portada">
+        <img *ngIf="usuario.portada == ''" src="https://firebasestorage.googleapis.com/v0/b/artesanias-app.appspot.com/o/assets%2Fimg%2Fno-img-portada.jpg?alt=media&token=88a45873-9152-4e12-8d22-956a13eaaa3d" alt="" class="portada">
+    </div>
+    <div class="box-perfil">
+        <img *ngIf="usuario.avatar != ''" [src]="usuario.avatar" alt="">
+        <img *ngIf="usuario.avatar == ''" src="https://firebasestorage.googleapis.com/v0/b/artesanias-app.appspot.com/o/assets%2Fimg%2Fno-image.png?alt=media&token=82ab8189-1d5b-49c4-b9ac-9e1cf72f6555" alt="">
+    </div>
+    <div class="box-data">
+        <div class="box-datos-personales">
+            <h3>Datos Personales</h3>
+            <h4>{{ usuario.name }}</h4>
+            <h5>{{ usuario.username }}</h5>
+            <h5>{{ usuario.email }}</h5>
+            <h5>{{ usuario.telefono }}</h5>
+        </div>
+        <div class="box-direcciones">
+            <h3>Direcciones</h3>
+            <div class="direcciones" *ngIf="usuario.direcciones">
+                <h5 *ngFor="let direccion of usuario.direcciones, let i = index">
+                    {{ i }} <small>:</small>{{ direccion.dpto }}<small>/</small>{{ direccion.municipio }}<small>/</small>{{ direccion.barrio}}<small>/</small>{{ direccion.direccion }}<small>/</small>
+                </h5>
+            </div>
+            <button class="btn btn-outline-success">
+                <i class="fa fa-plus" aria-hidden="true"></i> Agregar
+            </button>
+        </div>
+    </div>
+    <hr>
+    <div class="box-productos">
+        <h1>Productos</h1>
+        <app-all-productos></app-all-productos>
+    </div>
+</main>

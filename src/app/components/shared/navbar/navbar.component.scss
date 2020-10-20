@@ -1,0 +1,60 @@
+/* Header */
+
+.header {
+    height: auto;
+}
+
+.header.principal {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(assets/img/banner-header.jpg);
+    background-attachment: fixed;
+    height: 500px;
+    @media screen and (max-width: 768px) {
+        background-position: center;
+    }
+    @media screen and (max-width:420px) {
+        height: 300px;
+    }
+}
+
+
+/* Cambios a Bootstrap */
+
+
+/* Navbar */
+
+.success {
+    color: #9fa327;
+    border-color: #9fa327;
+}
+
+.navbar-brand {
+    font-size: 40px;
+}
+
+.nav-link {
+    color: #CCD126 !important;
+    font-size: 20px;
+}
+
+@media screen and (min-width: 992px) {
+    .navbar-expand-lg .navbar-collapse {
+        width: 25%;
+    }
+}
+
+@media (min-width: 992px) {
+    .dropdown-menu {
+        left: -100px;
+    }
+}
+
+
+/* Logo */
+
+.logo {
+    font-family: 'Lobster', cursive;
+    text-shadow: 2px 2px 5px #9fa327;
+    font-family: 'Lobster', cursive;
+}
