@@ -64,7 +64,7 @@ export class AllProductosComponent implements OnInit {
 
   }
 
-  eliminarProducto(idProd: string){
+  eliminarProducto(idProd: string, fileName:string){
 
     Swal.fire({
       title: `Está seguro de Borrar el Producto con ID: ${idProd}`,
@@ -76,7 +76,7 @@ export class AllProductosComponent implements OnInit {
       confirmButtonText: 'Sí, Eliminar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this._productosService.deleteProducto(idProd)
+        this._productosService.deleteProducto(idProd, fileName)
       }
     })
   }

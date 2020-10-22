@@ -22,7 +22,7 @@
                 <a href="" class="btn btn-outline-success success m-1" *ngIf="uid == ''">
                     <i class="fa fa-eye" aria-hidden="true"></i> Ver
                 </a>
-                <a (click)="eliminarProducto(producto.id)" class="btn btn-outline-success success m-1" *ngIf="uid != ''">
+                <a (click)="eliminarProducto(producto.id, producto.nombreImg)" class="btn btn-outline-success success m-1" *ngIf="uid != ''">
                     <i class="fa fa-trash" aria-hidden="true"></i> Borrar
                 </a>
             </div>

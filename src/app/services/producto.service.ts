@@ -40,7 +40,6 @@ export class ProductoService{
     if( producto.id.toString() == ''){
       producto.id = this.generarId();
     }
-    console.log(event);
 
     this.productosCollection.doc(producto.id.toString()).set({...producto})
     .then((res)=>{
@@ -87,7 +86,7 @@ export class ProductoService{
             if(res.state === 'success'){
                 storageRef.getDownloadURL()
                         .subscribe((res)=>{
-                            this.guardarImagen(idProd, res)   
+                            this.guardarImagen(idProd, res, file.name)   
                             Swal.fire('Guardado!', '', 'success')
                                 .then(()=>{
                                   this.router.navigate([`perfil/${uid}`]);
@@ -99,11 +98,11 @@ export class ProductoService{
         })
   }
 
-  guardarImagen(idProd:number, imgUrl:string){
+  guardarImagen(idProd:number, imgUrl:string, fileName:string){
 
     const stringId = idProd.toString();
 
-    this.productosCollection.doc(stringId).update({imagen: imgUrl})
+    this.productosCollection.doc(stringId).update({imagen: imgUrl, nombreImg: fileName})
         .then((res)=>{
             console.log(res)
         })
@@ -113,9 +112,14 @@ export class ProductoService{
 
   }
 
-  deleteProducto(idProd: string){
+  deleteProducto(idProd: string, fileName:string = ''){
+
     this.productosCollection.doc(idProd.toString()).delete()
       .then((res)=>{
+        if(fileName != ''){
+          const storageRef = this.storage.ref(`Productos_Imagenes/${fileName}`);
+          storageRef.delete()
+        }
         Swal.fire(
           'Eliminado!',
           'El Producto fue Borrado',
