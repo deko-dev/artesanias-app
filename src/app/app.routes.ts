@@ -13,15 +13,10 @@ const routes: Routes = [
         .then(m => m.PerfilModule)
     },
     { 
-        path: 'productos/all', 
+        path: 'productos', 
         loadChildren: () => import('./producto/producto.module')
         .then(m => m.ProductoModule) 
-    },
-    { 
-        path: 'productos/all/:username', 
-        loadChildren: () => import('./producto/producto.module')
-        .then(m => m.ProductoModule) 
-    },
+    }
 ];
 
 @NgModule({

@@ -1,1 +1,79 @@
-<p>editar-producto works!</p>
+<div class="container mb-5">
+    <!-- Titulo de la página -->
+    <h1>Producto <small *ngIf="!nuevo">Nombre Producto</small></h1>
+    <hr>
+
+    <div class="row text-right">
+        <div class="col">
+            <button class="btn btn-danger" [routerLink]="['/perfil', uid]">
+            <i class="fa fa-arrow-left"></i>
+            Regresar
+        </button>
+        </div>
+    </div>
+
+    <div class="row animate__animated animate__fadeIn animate__faster wow row">
+
+        <div class="col">
+
+            <form (ngSubmit)="guardar()" [formGroup]="productoForm">
+
+                <div class="form-group row">
+                    <label class="col-2 col-form-label">
+                    Id:
+                </label>
+                    <div class="col">
+                        <input *ngIf="nuevo" class="form-control" type="text" placeholder="id" formControlName="id" disabled>
+                        <input *ngIf="!nuevo" class="form-control" type="text" placeholder="id" formControlName="id">
+                    </div>
+                </div>
+
+                <div class="form-group row  mt-3">
+                    <label class="col-2 col-form-label">
+                    Nombre:
+                </label>
+                    <div class="col">
+                        <input class="form-control" type="text" placeholder="Nombre del Producto" formControlName="nombre" requerid>
+                    </div>
+                </div>
+                <div class="form-group row  mt-3">
+                    <label class="col-2 col-form-label">
+                    Descripcion:
+                </label>
+                    <div class="col">
+                        <textarea formControlName="desc" class="form-control" cols="30" rows="5" required></textarea>
+                    </div>
+                </div>
+                <div class="form-group row  mt-3">
+                    <label class="col-2 col-form-label">
+                    Precio:
+                </label>
+                    <div class="col">
+                        <input class="form-control" type="text" placeholder="Precio del Producto" formControlName="precio" requerid>
+                    </div>
+                </div>
+                <div class="form-group row  mt-3">
+                    <label class="col-2 col-form-label">
+                    Imagen:
+                </label>
+                    <div class="col">
+                        <input class="form-control" type="file" placeholder="Imagen del Producto" formControlName="imagen" (change)="probandoImg($event)">
+                    </div>
+                </div>
+
+
+                <div class="form-group row mt-3">
+                    <label class="col-2 col-form-label">&nbsp;</label>
+                    <div class="input-group col">
+                        <button type="submit" class="btn btn-outline-primary btn-block">
+                Guardar
+              </button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>

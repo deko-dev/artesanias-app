@@ -1,8 +1,7 @@
 <main>
-    <button class="btn btn-primary btn-edit">
-        <i class="far fa-edit"></i>
-        Editar Perfil
-    </button>
+    <a routerLink="edit" class="btn btn-primary btn-edit">
+        <i class="far fa-edit"></i> Editar Perfil
+    </a>
     <div class="box-portada">
         <img *ngIf="usuario.portada != ''" [src]="usuario.portada" alt="" class="portada">
         <img *ngIf="usuario.portada == ''" src="https://firebasestorage.googleapis.com/v0/b/artesanias-app.appspot.com/o/assets%2Fimg%2Fno-img-portada.jpg?alt=media&token=88a45873-9152-4e12-8d22-956a13eaaa3d" alt="" class="portada">
@@ -34,6 +33,6 @@
     <hr>
     <div class="box-productos">
         <h1>Productos</h1>
-        <app-all-productos></app-all-productos>
+        <app-all-productos [uid]="uid"></app-all-productos>
     </div>
 </main>

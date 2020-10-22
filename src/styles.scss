@@ -20,7 +20,7 @@ img {
 /* Main */
 
 .main {
-    height: 90vh;
+    height: auto;
     background: #f7f7f7;
     text-align: center;
     padding: 30px 0px;
@@ -114,6 +114,7 @@ img {
         padding: 10px 20px;
     }
     .card {
+        max-width: 33%;
         flex: 0 1 calc(30% - 10px);
         transition: 1s;
         @media screen and (max-width: 768px) {
@@ -128,5 +129,11 @@ img {
         transform: translateY(-20px);
         border-bottom: 5px solid #9fa327;
         border-top: 5px solid #9fa327;
+    }
+    .agg-p {
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

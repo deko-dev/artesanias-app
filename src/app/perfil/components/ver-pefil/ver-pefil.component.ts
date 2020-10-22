@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { User } from '../../../interfaces/user.interface';
 import { UsersService } from '../../../services/users.service';
@@ -11,7 +11,7 @@ import { UsersService } from '../../../services/users.service';
 export class VerPefilComponent implements OnInit {
 
   usuario: any;
-
+  uid: string;
   constructor(
     private activeRoute: ActivatedRoute,
     private _userService: UsersService
@@ -21,6 +21,7 @@ export class VerPefilComponent implements OnInit {
         .subscribe((res: any) => {
           // console.log(res)
           this.cargarUSuario(res.uid)
+          this.uid = res.uid;
         })
 
   }

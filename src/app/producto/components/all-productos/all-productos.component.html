@@ -1,128 +1,44 @@
 <main class="main productos">
-    <div class="card mb-3 animate__fadeInUp animate__animated wow">
+
+    <div *ngFor="let producto of productos" class="card mb-3 animate__fadeInUp animate__animated wow">
         <div class="row g-0">
             <div class="col-md-4 col-sm-4 col-xs-4">
-                <img src="../../../../assets/img/vender.jpg" class="img-resposive" alt="...">
+                <img *ngIf="producto.imagen != ''" [src]="producto.imagen" class="img-resposive" [alt]="producto.nombre">
+                <img *ngIf="producto.imagen == ''" src="https://firebasestorage.googleapis.com/v0/b/artesanias-app.appspot.com/o/assets%2Fimg%2Fno-image.png?alt=media&token=82ab8189-1d5b-49c4-b9ac-9e1cf72f6555" class="img-resposive" [alt]="producto.nombre">
             </div>
             <div class="col-md-8 col-sm8 col-xs-8">
                 <div class="card-body">
-                    <h5 class="card-title">Producto</h5>
-                    <p class="card-text">Aqui va la Descripcion del Producto</p>
-                    <h3>$35.000</h3>
+                    <h5 class="card-title">{{ producto.nombre }}</h5>
+                    <p class="card-text">{{ producto.desc }}</p>
+                    <h3>{{ producto.precio | currency }}</h3>
                     <span class="badge bg-success">disponible</span>
                 </div>
-                <a href="" class="btn btn-outline-success success m-1">
+                <a href="" class="btn btn-outline-success success m-1" *ngIf="uid == ''">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito
                 </a>
-                <a (click)="verProducto()" class="btn btn-outline-primary">
+                <a [routerLink]="['edit', producto.id]" class="btn btn-outline-success success m-1" *ngIf="uid != ''">
+                    <i class="fas fa-edit"></i> Editar
+                </a>
+                <a href="" class="btn btn-outline-success success m-1" *ngIf="uid == ''">
                     <i class="fa fa-eye" aria-hidden="true"></i> Ver
+                </a>
+                <a (click)="eliminarProducto(producto.id)" class="btn btn-outline-success success m-1" *ngIf="uid != ''">
+                    <i class="fa fa-trash" aria-hidden="true"></i> Borrar
                 </a>
             </div>
         </div>
     </div>
-    <div class="card mb-3 animate__fadeInUp animate__animated wow">
-        <div class="row g-0">
-            <div class="col-md-4 col-sm-4 col-xs-4">
-                <img src="../../../../assets/img/vender.jpg" class="img-resposive" alt="...">
-            </div>
-            <div class="col-md-8 col-sm8 col-xs-8">
-                <div class="card-body">
-                    <h5 class="card-title">Producto</h5>
-                    <p class="card-text">Aqui va la Descripcion del Producto</p>
-                    <h3>$35.000</h3>
-                    <span class="badge bg-success">disponible</span>
-                </div>
-                <a href="" class="btn btn-outline-success success m-1">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito
-                </a>
-                <a (click)="verProducto()" class="btn btn-outline-primary">
-                    <i class="fa fa-eye" aria-hidden="true"></i> Ver
-                </a>
-            </div>
-        </div>
+
+    <div class="alert alert-warning text-center mt-3 animate__animated animate__fadeIn" *ngIf="productos.length === 0">
+        <h4 class="alert-heading">No hay registros</h4>
+        <p class="mb-0">
+            <i class="fa fa-exclamation fa-2x"></i>
+        </p>
     </div>
-    <div class="card mb-3 animate__fadeInUp animate__animated wow">
-        <div class="row g-0">
-            <div class="col-md-4 col-sm-4 col-xs-4">
-                <img src="../../../../assets/img/vender.jpg" class="img-resposive" alt="...">
-            </div>
-            <div class="col-md-8 col-sm8 col-xs-8">
-                <div class="card-body">
-                    <h5 class="card-title">Producto</h5>
-                    <p class="card-text">Aqui va la Descripcion del Producto</p>
-                    <h3>$35.000</h3>
-                    <span class="badge bg-success">disponible</span>
-                </div>
-                <a href="" class="btn btn-outline-success success m-1">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito
-                </a>
-                <a (click)="verProducto()" class="btn btn-outline-primary">
-                    <i class="fa fa-eye" aria-hidden="true"></i> Ver
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="card mb-3 animate__fadeInUp animate__animated wow">
-        <div class="row g-0">
-            <div class="col-md-4 col-sm-4 col-xs-4">
-                <img src="../../../../assets/img/vender.jpg" class="img-resposive" alt="...">
-            </div>
-            <div class="col-md-8 col-sm8 col-xs-8">
-                <div class="card-body">
-                    <h5 class="card-title">Producto</h5>
-                    <p class="card-text">Aqui va la Descripcion del Producto</p>
-                    <h3>$35.000</h3>
-                    <span class="badge bg-success">disponible</span>
-                </div>
-                <a href="" class="btn btn-outline-success success m-1">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito
-                </a>
-                <a (click)="verProducto()" class="btn btn-outline-primary">
-                    <i class="fa fa-eye" aria-hidden="true"></i> Ver
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="card mb-3 animate__fadeInUp animate__animated wow">
-        <div class="row g-0">
-            <div class="col-md-4 col-sm-4 col-xs-4">
-                <img src="../../../../assets/img/vender.jpg" class="img-resposive" alt="...">
-            </div>
-            <div class="col-md-8 col-sm8 col-xs-8">
-                <div class="card-body">
-                    <h5 class="card-title">Producto</h5>
-                    <p class="card-text">Aqui va la Descripcion del Producto</p>
-                    <h3>$35.000</h3>
-                    <span class="badge bg-success">disponible</span>
-                </div>
-                <a href="" class="btn btn-outline-success success m-1">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito
-                </a>
-                <a (click)="verProducto()" class="btn btn-outline-primary">
-                    <i class="fa fa-eye" aria-hidden="true"></i> Ver
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="card mb-3 animate__fadeInUp animate__animated wow">
-        <div class="row g-0">
-            <div class="col-md-4 col-sm-4 col-xs-4">
-                <img src="../../../../assets/img/vender.jpg" class="img-resposive" alt="...">
-            </div>
-            <div class="col-md-8 col-sm8 col-xs-8">
-                <div class="card-body">
-                    <h5 class="card-title">Producto</h5>
-                    <p class="card-text">Aqui va la Descripcion del Producto</p>
-                    <h3>$35.000</h3>
-                    <span class="badge bg-success">disponible</span>
-                </div>
-                <a href="" class="btn btn-outline-success success m-1">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito
-                </a>
-                <a (click)="verProducto()" class="btn btn-outline-primary">
-                    <i class="fa fa-eye" aria-hidden="true"></i> Ver
-                </a>
-            </div>
-        </div>
+
+    <div class="card agg-p mb-3 animate__fadeInUp animate__animated wow">
+        <a routerLink="new" class="btn btn-outline-primary">
+            <i class="fa fa-plus" aria-hidden="true"></i> Agregar Producto
+        </a>
     </div>
 </main>

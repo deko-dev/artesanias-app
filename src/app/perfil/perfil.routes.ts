@@ -3,7 +3,13 @@ import { NgModule } from '@angular/core';
 import { VerPefilComponent } from './components/ver-pefil/ver-pefil.component';
 
 const routes: Routes = [
-    { path: '', component: VerPefilComponent }
+    { 
+        path: '', 
+        component: VerPefilComponent,
+        children: [
+            {path: ':uid/edit', component: VerPefilComponent}
+        ]
+    }
 
 ];
 
