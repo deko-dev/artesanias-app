@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 import { auth } from 'firebase/app';
-import { User } from '../interfaces/user.interface';
 
 
 
@@ -12,8 +11,6 @@ import { User } from '../interfaces/user.interface';
 export class AuthService {
 
   guardar: boolean;
-
-  public usuario: User;
 
   constructor(
     public auth: AngularFireAuth,

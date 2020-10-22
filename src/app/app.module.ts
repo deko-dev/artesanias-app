@@ -8,7 +8,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
-import { environment } from '../environments/environment';
+import { Firbease } from '../environments/firebase';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -20,9 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp( environment.firebase ),
+    AngularFireModule.initializeApp( Firbease.firebase ),
     AngularFirestoreModule,
-    AppRoutingModule,
     ReactiveFormsModule,
   ],
   providers: [],

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { User } from '../../../interfaces/user.interface';
 import { AuthService } from '../../../services/auth.service';
 import { UsersService } from '../../../services/users.service';
 
@@ -19,7 +18,6 @@ export class NavbarComponent implements OnInit {
     private _authService: AuthService,
     private _usersService: UsersService,
     private router: Router,
-    private activateRoute: ActivatedRoute
   ) { 
     this._authService.auth.authState
                     .subscribe( (user) => {
